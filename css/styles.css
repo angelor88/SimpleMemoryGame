@@ -12,8 +12,8 @@ body {
   font-family: "Book Antiqua";
 }
 .col-md-2 {
-  background-color: #ff8552;
-  color: #85ffc7;
+  background-color: #2ccaef;
+  color: white;
   font-family: "Book Antiqua";
   border: 1px solid black;
   box-shadow: 0 0 5px black;
@@ -34,4 +34,23 @@ footer {
     box-shadow: 0 0 5px black;
     font-size: 16px;
     font-weight: bold;
+}
+#newGame {
+  width:50%;
+  margin-left: 25%;
+  text-align: center;
+}
+.btn {
+  color: white;
+  background-color: #2ccaef;
+  margin-left: 5%;
+}
+h2 {
+  text-align: center;
+}
+.hidden {
+  display:none;
+}
+#results {
+  display:none;
 }

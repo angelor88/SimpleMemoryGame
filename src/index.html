@@ -10,6 +10,23 @@
       <div class = "jumbotron">
           <h1>Simple Memory Game</h1>
       </div>
+      <div class="row" id="initial">
+        <div class="col-md-12">
+          <h2>Select how many cards you want to play with!<hr></h2>
+          <form id="newGame">
+            <label for="cardNum">Number of Cards:</label>
+            <input id="cardNum" class="form-control" type="number" min="1" max="36">
+            <br>
+            <button type="submit" class="btn medium">Play</button>
+          </form>
+        </div>
+      </div>
+      <div class="row inithidden" id="results">
+        <h3> Begin! </h3>
+        <div class="col-md-12" id="displayCards">
+        </div>
+        <button type="button" class="btn medium" id="playAgain">Play Again</button>
+      </div>
     <footer>Alexander Neumann & Angelo Russoniello @ Epicodus 2018</footer>
   </div>
 
