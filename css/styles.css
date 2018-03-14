@@ -2,6 +2,8 @@
   color: white;
   background-color: #2ccaef;
   font-family: "Book Antiqua";
+  opacity: 0.8;
+  box-shadow: 0 0 5px black;
 }
 .jumbotron h1 {
   text-align: center;
@@ -20,6 +22,7 @@ body {
   font-weight: bold;
   display: block !important;
   margin: 10px;
+  height: 250px;
 }
 footer {
     position: fixed;
@@ -53,4 +56,10 @@ h2 {
 }
 #results {
   display:none;
+}
+#results h3 {
+  text-align: center;
+}
+#playAgain {
+  margin-left: 45%;
 }
