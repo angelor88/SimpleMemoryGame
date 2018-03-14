@@ -20,7 +20,7 @@ function GenerateCards(inputNumber){
 function GenerateCardDisplay(){
   $("#displayCards").text("");
   for(var i = 0; i < displayCards.length; i ++){
-    $("#displayCards").append('<div class="col-md-2 result"><h1>' + displayCards[i].id + '</h1><img src="' + displayCards[i].imgUrl + '" alt="A Card" height="100" width="100"></div>');
+    $("#displayCards").append('<div class="col-md-2 result"><h1>' + displayCards[i].id + '</h1><input type="hidden" value="'+i+'"/><img src="' + displayCards[i].imgUrl + '" alt="A Card" height="100" width="100"></div>');
   }
 }
 function GenerateDisplayCards(){
@@ -39,23 +39,45 @@ function RandomizeDisplayCards(){
 }
 
 $(document).ready(function(){
-  $("body").append("<h1>IMAGE</h1>");
-  $("body").append("<img src='/img/1.png'>");
+  let firstCardId = -1;
+  let lastCardIndex = 0;
+  let firstCardState = true;
+
   $("form#newGame").submit(function(event) {
     event.preventDefault();
     var numberOfCards = $("#cardNum").val();
-    // $("#initial").addClass("hidden");
+    $("#initial").addClass("hidden");
     $("#results").show();
     GenerateCards(numberOfCards);
     $("img").addClass("hidden");
     $(".result").click(function() {
       let thisCardId = parseInt($(this).find("h1").text());
-      console.log(thisCardId);
+
       $(this).find("img").removeClass("hidden");
+      if(firstCardState){
+
+        firstCardId = thisCardId;
+        lastCardIndex = $(this).find("input").val();
+        firstCardState = false;
+      } else {
+        if(firstCardId == thisCardId){
+          firstCardState = true;
+          //DO nothing
+        } else {
+          setTimeout(function(){
+            $('.result input[value="' + lastCardIndex + '"]').siblings("img").addClass("hidden");
+          }, 1000);
+          setTimeout(function(){
+            $(this).find("img").addClass("hidden");
+          }, 1000);
+
+          firstCardState = true;
+        }
+      }
     });
   });
   $("#playAgain").click(function() {
-      $("#initial").removeClass("hidden");
-      $("#results").hide();
+  $("#initial").removeClass("hidden");
+  $("#results").hide();
     });
 });
