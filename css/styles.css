@@ -1,0 +1,37 @@
+.jumbotron {
+  color: white;
+  background-color: #2ccaef;
+  font-family: "Book Antiqua";
+}
+.jumbotron h1 {
+  text-align: center;
+}
+body {
+  color: white;
+  background-color: #9097bf;
+  font-family: "Book Antiqua";
+}
+.col-md-2 {
+  background-color: #ff8552;
+  color: #85ffc7;
+  font-family: "Book Antiqua";
+  border: 1px solid black;
+  box-shadow: 0 0 5px black;
+  font-weight: bold;
+  display: block !important;
+  margin: 10px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    color: white;
+    background-color: #2ccaef;
+    text-align: center;
+    opacity: 0.8;
+    box-shadow: 0 0 5px black;
+    font-size: 16px;
+    font-weight: bold;
+}
